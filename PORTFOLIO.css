@@ -46,7 +46,7 @@ a:hover {
     padding: 20px 50px
 }
 
-.bg-b-edge, .bg-br-edge, .bg-center, .bg-l-edge, .bg-r-edge, .bg-t-edge {
+.bg-b-edge, .bg-br-edge, .bg-center, .bg-l-edge, .bg-r-edge, .bg-repeat, .bg-t-edge {
     -webkit-background-size: auto!important;
     -moz-background-size: auto!important;
     -o-background-size: auto!important;
@@ -71,7 +71,10 @@ a:hover {
     right: 0
 }
 
-
+.texture-paper::before {
+    background: url(img/texture-paper.webp);
+    background-size: 280px 280px
+}
 
 .b-parallax {
     background-attachment: fixed
@@ -115,20 +118,6 @@ a:hover {
 
 .l-bloc .navbar-toggle .icon-bar {
     color: rgba(0, 0, 0, .6)
-}
-
-.voffset {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.col-md-offset-2 {
-    margin-left: 0;
-}
-
-.voffset-lg {
-    margin-top: 80px
 }
 
 .row-no-gutters {
@@ -203,7 +192,6 @@ a:hover {
     background-color: rgba(0, 0, 0, .5);
     width: 26px
 }
-
 
 @media (min-width:768px) {
     .site-navigation {
@@ -284,28 +272,6 @@ button {
     font-size: 60px!important
 }
 
-.sm-shadow {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .3)
-}
-
-.form-control {
-    border-color: rgba(0, 0, 0, .1);
-    box-shadow: none
-}
-
-.scrollToTop {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    transition: all .3s ease-in-out
-}
-
-.scrollToTop span {
-    margin-top: 6px
-}
-
 a[data-lightbox] {
     position: relative;
     display: block;
@@ -367,7 +333,7 @@ a[data-lightbox]:hover img {
 }
 
 p {
-    font-size: 18px
+    font-size: 11px
 }
 
 .tight-width-whitespace {
@@ -406,23 +372,12 @@ h3 {
     color: #333!important
 }
 
-.med-width-whitespace {
-    max-width: 800px;
-    margin: auto auto auto auto;
-    box-shadow: 0 0 0 #000
-}
-
 h1 {
     color: #333!important
 }
 
 h4 {
     color: #333!important
-}
-
-.icons {
-    margin-bottom: 14px;
-    margin-top: 24px
 }
 
 .white {
@@ -438,16 +393,6 @@ h4 {
     margin-top: 50px
 }
 
-.black-background {
-    background-color: rgba(165, 147, 99, .7);
-    padding: 40px 40px 40px 40px
-}
-
-.bold-link {
-    font-weight: 900;
-    text-decoration: underline!important
-}
-
 .bgc-white {
     background-color: #fff
 }
@@ -461,9 +406,8 @@ h4 {
 }
 
 .tc-white {
-    color: #f3976c!important;
+    color: #f3976c!important
 }
-
 
 .btn-atomic-tangerine {
     background: #f3976c;
@@ -473,26 +417,6 @@ h4 {
 .btn-atomic-tangerine:hover {
     background: #c27956!important;
     color: #fff!important
-}
-
-.bg-dots-bg {
-    background-image: url(img/dots-bg.webp)
-}
-
-.ltc-white {
-    color: #fff!important
-}
-
-.ltc-white:hover {
-    color: #ccc!important
-}
-
-.ltc-atomic-tangerine {
-    color: #f3976c!important
-}
-
-.ltc-atomic-tangerine:hover {
-    color: #c27956!important
 }
 
 .icon-dark-slate-blue {
@@ -528,19 +452,34 @@ h4 {
     }
 }
 
-@media only screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape) {
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape) {
     .b-parallax {
         background-attachment: scroll
     }
 }
 
-@media only screen and (min-width:1024px) and (max-width:1366px) and (-webkit-min-device-pixel-ratio:1.5) {
+@media only screen and (min-device-width:1024px) and (max-device-width:1366px) and (-webkit-min-device-pixel-ratio:1.5) {
     .b-parallax {
         background-attachment: scroll
     }
 }
 
-
+@media (max-width:991px) {
+    .container {
+        width: 100%
+    }
+    .b-parallax {
+        background-attachment: scroll
+    }
+    #hero-bloc, .page-container {
+        overflow-x: hidden;
+        position: relative
+    }
+    .bloc {
+        padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right)
+    }
+}
 
 @media (max-width:767px) {
     .page-container {
@@ -616,21 +555,6 @@ h4 {
     }
     .a-block {
         padding: 0 10px
-    }
-    .voffset {
-        margin-top: 5px
-    }
-    .voffset-md {
-        margin-top: 20px
-    }
-    .voffset-lg {
-        margin-top: 30px
-    }
-    form {
-        padding: 5px
-    }
-    img {
-        margin: auto;
     }
 }
 
